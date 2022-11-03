@@ -16,10 +16,15 @@ const ingredients = [
 ];
 
 
-ingredients.map(elem => {
 const ingredientsList = document.querySelector("#ingredients");
-const ingredientsItem = document.createElement("li");
-ingredientsItem.classList.add('item');
-  ingredientsItem.textContent = elem;
-  ingredientsList.append(ingredientsItem);
-})
+
+function greateItem (array) {
+ return array.map(elem => {
+    const ingredientsItem = document.createElement("li");
+    ingredientsItem.classList.add('item');
+    ingredientsItem.textContent = elem;
+    return ingredientsItem;
+    })
+};
+
+ingredientsList.append(...greateItem(ingredients));

@@ -27,12 +27,9 @@ const images = [
 ];
 
 
-images.map(elem => {
-  const galleryList = document.querySelector(".gallery");
-  const galleryImg = document.createElement("img");
-  galleryImg.classList.add('img-class');
-  galleryImg.src = elem.url;
-  galleryImg.alt = elem.alt;
-  galleryImg.width = 450;
-  galleryList.append(galleryImg);
-  })
+const galleryList = document.querySelector(".gallery");
+
+const catsGalaryItem = images.map(({ url, alt }) =>
+`<li><img width="450px" src="${url}" alt="${alt}"></li>`);
+
+galleryList.insertAdjacentHTML('afterbegin', catsGalaryItem);
