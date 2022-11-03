@@ -32,4 +32,4 @@ const galleryList = document.querySelector(".gallery");
 const catsGalaryItem = images.map(({ url, alt }) =>
 `<li><img width="450px" src="${url}" alt="${alt}"></li>`);
 
-galleryList.insertAdjacentHTML('afterbegin', catsGalaryItem);
+galleryList.insertAdjacentHTML('afterbegin', catsGalaryItem.join(''));
